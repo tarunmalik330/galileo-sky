@@ -106,7 +106,7 @@ const Header = () => {
       </div>
       <Navbar />
       <div className="container xl:max-w-[1164px] 2xl:flex-grow flex justify-center items-center flex-col mx-auto px-3 mt-[70px] sm:mt-[100px] md:mt-[164px] 2xl:mt-0 relative !z-[3]">
-        <div className="flex md:flex-col max-md:items-baseline items-center gap-[13px] justify-between h-20 absolute max-md:justify-center md:left-0 xl:left-[-10%] lg:left-[5%] max-md:bottom-[-30%] max-[340px]:bottom-[-20%] md:top-[38%] translate-y-[50%] space-y-2.5">
+        <div className="flex md:flex-col max-md:items-baseline items-center sm:gap-[13px] gap-2 justify-between h-20 absolute max-md:justify-center md:left-0 xl:left-[-10%] lg:left-[5%] max-md:bottom-[-30%] max-[340px]:bottom-[-20%] md:top-[38%] translate-y-[50%] space-y-2.5">
           {videos.map((_, index) => (
             <div key={index} className="flex items-center">
               <div className="flex items-center justify-center w-[47px] h-[8px]">
