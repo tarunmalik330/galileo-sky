@@ -5,6 +5,10 @@ import Image from "next/image";
 import { Arrow } from "./common/Icon";
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
   const [nav, setNav] = useState(true);
 
   useEffect(() => {
@@ -23,17 +27,29 @@ export default function Navbar() {
             <Link
               onClick={() => setNav(!nav)}
               href="#games"
-              className="text-whitegrey ff_poppins leading-normal text-base font-semibold flex items-center gap-1 after:h-[2px] after:w-[0] hover:after:w-full after:bg-lightWhite after:absolute relative after:transition-all after:duration-300 after:ease-linear left-0 after:left-[50%] hover:after:left-[0] after:-bottom-[2px] after:rounded-[10px] transition-all duration-300 ease-linear"
+              className="text-whitegrey ff_poppins leading-normal text-base font-semibold flex items-center gap-1"
             >
-              Games <Arrow />
+              Games
+              <span
+                className={`${isOpen ? "rotate-180" : ""}`}
+                onClick={toggleDropdown}
+              >
+                <Arrow />
+              </span>
             </Link>
-            {/* <Dropdown /> */}
+            {isOpen && (
+              <div className="flex flex-col whitespace-nowrap bg-white py-5 px-4 text-black gap-3 absolute z-[1] top-10 font-medium text-base rounded-lg">
+                <a href="#">Game 1</a>
+                <a href="#">Game 2</a>
+                <a href="#">Game 3</a>
+              </div>
+            )}
           </li>
           <li>
             <Link
               onClick={() => setNav(!nav)}
               href="#ai-platform"
-              className="text-whitegrey ff_poppins leading-normal text-base font-semibold after:h-[2px] after:w-[0] hover:after:w-full after:bg-lightWhite after:absolute relative after:transition-all after:duration-300 after:ease-linear left-0 after:left-[50%] hover:after:left-[0] after:bottom-[-2px] after:rounded-[10px] transition-all duration-300 ease-linear"
+              className="text-whitegrey ff_poppins leading-normal text-base font-semibold after:h-[2px] after:w-[0] hover:after:w-full after:bg-whitegrey after:absolute relative after:transition-all after:duration-300 after:ease-linear left-0 after:left-[50%] hover:after:left-[0] after:bottom-[-2px] after:rounded-[10px] transition-all duration-300 ease-linear"
             >
               AI-Platform
             </Link>
@@ -53,7 +69,7 @@ export default function Navbar() {
             <Link
               onClick={() => setNav(!nav)}
               href="#team"
-              className="text-whitegrey ff_poppins leading-normal text-base font-semibold after:h-[2px] after:w-[0] hover:after:w-full after:bg-lightWhite after:absolute relative after:transition-all after:duration-300 after:ease-linear left-0 after:left-[50%] hover:after:left-[0] after:bottom-[-2px] after:rounded-[10px] transition-all duration-300 ease-linear"
+              className="text-whitegrey ff_poppins leading-normal text-base font-semibold after:h-[2px] after:w-[0] hover:after:w-full after:bg-whitegrey after:absolute relative after:transition-all after:duration-300 after:ease-linear left-0 after:left-[50%] hover:after:left-[0] after:bottom-[-2px] after:rounded-[10px] transition-all duration-300 ease-linear"
             >
               Team
             </Link>
@@ -62,7 +78,7 @@ export default function Navbar() {
             <Link
               onClick={() => setNav(!nav)}
               href="#careers"
-              className="text-whitegrey ff_poppins leading-normal text-base font-semibold after:h-[2px] after:w-[0] hover:after:w-full after:bg-lightWhite after:absolute relative after:transition-all after:duration-300 after:ease-linear left-0 after:left-[50%] hover:after:left-[0] after:bottom-[-2px] after:rounded-[10px] transition-all duration-300 ease-linear"
+              className="text-whitegrey ff_poppins leading-normal text-base font-semibold after:h-[2px] after:w-[0] hover:after:w-full after:bg-whitegrey after:absolute relative after:transition-all after:duration-300 after:ease-linear left-0 after:left-[50%] hover:after:left-[0] after:bottom-[-2px] after:rounded-[10px] transition-all duration-300 ease-linear"
             >
               Careers
             </Link>
@@ -87,7 +103,7 @@ export default function Navbar() {
               <Link
                 onClick={() => setNav(!nav)}
                 href="#games"
-                className="text-whitegrey ff_poppins leading-normal text-base font-semibold flex items-center gap-1 after:h-[2px] after:w-[0] hover:after:w-full after:bg-lightWhite after:absolute relative after:transition-all after:duration-300 after:ease-linear left-0 after:left-[50%] hover:after:left-[0] after:bottom-[-2px] after:rounded-[10px] transition-all duration-300 ease-linear"
+                className="text-whitegrey ff_poppins leading-normal text-base font-semibold flex items-center gap-1 after:h-[2px] after:w-[0] hover:after:w-full after:bg-whitegrey after:absolute relative after:transition-all after:duration-300 after:ease-linear left-0 after:left-[50%] hover:after:left-[0] after:bottom-[-2px] after:rounded-[10px] transition-all duration-300 ease-linear"
               >
                 Games <Arrow />
               </Link>
@@ -97,7 +113,7 @@ export default function Navbar() {
               <Link
                 onClick={() => setNav(!nav)}
                 href="#ai-platform"
-                className="text-whitegrey ff_poppins leading-normal text-base font-semibold after:h-[2px] after:w-[0] hover:after:w-full after:bg-lightWhite after:absolute relative after:transition-all after:duration-300 after:ease-linear left-0 after:left-[50%] hover:after:left-[0] after:bottom-[-2px] after:rounded-[10px] transition-all duration-300 ease-linear"
+                className="text-whitegrey ff_poppins leading-normal text-base font-semibold after:h-[2px] after:w-[0] hover:after:w-full after:bg-whitegrey after:absolute relative after:transition-all after:duration-300 after:ease-linear left-0 after:left-[50%] hover:after:left-[0] after:bottom-[-2px] after:rounded-[10px] transition-all duration-300 ease-linear"
               >
                 AI-Platform
               </Link>
@@ -106,7 +122,7 @@ export default function Navbar() {
               <Link
                 onClick={() => setNav(!nav)}
                 href="#team"
-                className="text-whitegrey ff_poppins leading-normal text-base font-semibold after:h-[2px] after:w-[0] hover:after:w-full after:bg-lightWhite after:absolute relative after:transition-all after:duration-300 after:ease-linear left-0 after:left-[50%] hover:after:left-[0] after:bottom-[-2px] after:rounded-[10px] transition-all duration-300 ease-linear"
+                className="text-whitegrey ff_poppins leading-normal text-base font-semibold after:h-[2px] after:w-[0] hover:after:w-full after:bg-whitegrey after:absolute relative after:transition-all after:duration-300 after:ease-linear left-0 after:left-[50%] hover:after:left-[0] after:bottom-[-2px] after:rounded-[10px] transition-all duration-300 ease-linear"
               >
                 Team
               </Link>
@@ -115,7 +131,7 @@ export default function Navbar() {
               <Link
                 onClick={() => setNav(!nav)}
                 href="#careers"
-                className="text-whitegrey ff_poppins leading-normal text-base font-semibold after:h-[2px] after:w-[0] hover:after:w-full after:bg-lightWhite after:absolute relative after:transition-all after:duration-300 after:ease-linear left-0 after:left-[50%] hover:after:left-[0] after:bottom-[-2px] after:rounded-[10px] transition-all duration-300 ease-linear"
+                className="text-whitegrey ff_poppins leading-normal text-base font-semibold after:h-[2px] after:w-[0] hover:after:w-full after:bg-whitegrey after:absolute relative after:transition-all after:duration-300 after:ease-linear left-0 after:left-[50%] hover:after:left-[0] after:bottom-[-2px] after:rounded-[10px] transition-all duration-300 ease-linear"
               >
                 Careers
               </Link>
