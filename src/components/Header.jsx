@@ -109,12 +109,14 @@ const Header = () => {
         <div className="flex md:flex-col max-md:items-baseline items-center gap-[13px] justify-between h-20 absolute max-md:justify-center md:left-0 xl:left-[-10%] lg:left-[5%] max-md:bottom-[-30%] max-[340px]:bottom-[-20%] md:top-[38%] translate-y-[50%] space-y-2.5">
           {videos.map((_, index) => (
             <div key={index} className="flex items-center">
-              <span
-                className={`h-[8px] rounded-[21px] ${
-                  index === presentVideo ? "bg-red w-[47px]" : "bg-white w-5"
-                } cursor-pointer md:rotate-90`}
-                onClick={() => setCurrentVideo(index)}
-              ></span>
+              <div className="flex items-center justify-center w-[47px] h-[8px]">
+                <span
+                  className={`h-[8px] rounded-[21px] transition-all duration-300 ease-in-out ${
+                    index === presentVideo ? "bg-red w-[47px]" : "bg-white w-5"
+                  } cursor-pointer md:rotate-90`}
+                  onClick={() => setCurrentVideo(index)}
+                ></span>
+              </div>
             </div>
           ))}
         </div>
