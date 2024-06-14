@@ -106,7 +106,7 @@ const Footer = () => {
                     />
                     {error && <p style={{ color: "red" }}>{error}</p>}
 
-                    <button className="text-white text-base leading-normal ff_poppins font-normal sm:py-[14px] py-3 sm:px-8 px-7 rounded-lg bg-darkred">
+                    <button className="text-white text-base leading-normal ff_poppins font-normal sm:py-[14px] py-3 sm:px-8 px-7 rounded-lg bg-darkred hover:bg-white hover:text-darkred transition-all ease-linear duration-300">
                       Submit
                     </button>
                   </form>
