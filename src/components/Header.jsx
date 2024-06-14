@@ -57,7 +57,9 @@ const Header = () => {
       });
     };
   }, [presentVideo, videos]);
-
+  const setCurrentVideo = (index) => {
+    setPresentVideo(index);
+  };
   return (
     <div
       id="hero"
@@ -104,6 +106,18 @@ const Header = () => {
       </div>
       <Navbar />
       <div className="container xl:max-w-[1164px] 2xl:flex-grow flex justify-center items-center flex-col mx-auto px-3 mt-[70px] sm:mt-[100px] md:mt-[164px] 2xl:mt-0 relative !z-[3]">
+        <div className="flex md:flex-col max-md:items-baseline items-center gap-[13px] justify-between h-20 absolute max-md:justify-center md:left-0 xl:left-[-10%] lg:left-[5%] max-md:bottom-[-30%] max-[340px]:bottom-[-20%] md:top-[38%] translate-y-[50%] space-y-2.5">
+          {videos.map((_, index) => (
+            <div key={index} className="flex items-center">
+              <span
+                className={`h-[8px] rounded-[21px] ${
+                  index === presentVideo ? "bg-red w-[47px]" : "bg-white w-5"
+                } cursor-pointer md:rotate-90`}
+                onClick={() => setCurrentVideo(index)}
+              ></span>
+            </div>
+          ))}
+        </div>
         <div className="!bg-gamingbtn bg-no-repeat bg-size py-[11.5px] md:px-[62.5px] sm:px-[40px] px-[35px]">
           <p className="ff_inter uppercase text-whitegrey leading-normal text-sm font-medium">
             Future of Gaming
