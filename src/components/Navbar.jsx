@@ -6,18 +6,28 @@ import { Arrow } from "./common/Icon";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [nav, setNav] = useState(true);
+
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
-  const [nav, setNav] = useState(true);
+
+  const closeDropdown = () => {
+    setIsOpen(false);
+  };
 
   useEffect(() => {
-    if (nav === false) {
+    if (!nav) {
       document.body.classList.add("max-lg:overflow-hidden");
     } else {
       document.body.classList.remove("max-lg:overflow-hidden");
     }
   }, [nav]);
+
+  const handleNavLinkClick = () => {
+    setNav(!nav);
+    closeDropdown();
+  };
 
   return (
     <div className="bg-blur shadow-[0px_7px_10.9px_0px_#0000002E] relative z-10">
@@ -40,9 +50,27 @@ export default function Navbar() {
             </Link>
             {isOpen && (
               <div className="flex flex-col whitespace-nowrap bg-white py-5 px-4 text-black gap-3 absolute z-[1] top-10 font-medium text-base rounded-lg">
-                <Link href="#home">Game 1</Link>
-                <Link href="#home">Game 2</Link>
-                <Link href="#home">Game 3</Link>
+                <Link
+                  className="hover:text-red transition-colors ease-linear duration-300 text-base"
+                  href="#home"
+                  onClick={closeDropdown}
+                >
+                  Game 1
+                </Link>
+                <Link
+                  className="hover:text-red transition-colors ease-linear duration-300 text-base"
+                  href="#home"
+                  onClick={closeDropdown}
+                >
+                  Game 2
+                </Link>
+                <Link
+                  className="hover:text-red transition-colors ease-linear duration-300 text-base"
+                  href="#home"
+                  onClick={closeDropdown}
+                >
+                  Game 3
+                </Link>
               </div>
             )}
           </li>
@@ -116,14 +144,26 @@ export default function Navbar() {
                 </span>
               </Link>
               {isOpen && (
-                <div className="flex flex-col whitespace-nowrap bg-white py-5 px-4 text-black gap-3 absolute z-[1] top-10 font-medium text-base rounded-lg">
-                  <Link onClick={() => setNav(!nav)} href="#home">
+                <div className="flex flex-col whitespace-nowrap bg-white py-5 px-4 text-black gap-3 absolute z-[1] top-10 font-medium rounded-lg">
+                  <Link
+                    className="hover:text-red transition-colors ease-linear duration-300 text-base"
+                    onClick={handleNavLinkClick}
+                    href="#home"
+                  >
                     Game 1
                   </Link>
-                  <Link onClick={() => setNav(!nav)} href="#home">
+                  <Link
+                    className="hover:text-red transition-colors ease-linear duration-300 text-base"
+                    onClick={handleNavLinkClick}
+                    href="#home"
+                  >
                     Game 2
                   </Link>
-                  <Link onClick={() => setNav(!nav)} href="#home">
+                  <Link
+                    className="hover:text-red transition-colors ease-linear duration-300 text-base"
+                    onClick={handleNavLinkClick}
+                    href="#home"
+                  >
                     Game 3
                   </Link>
                 </div>

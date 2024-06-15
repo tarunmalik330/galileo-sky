@@ -47,7 +47,7 @@ const Footer = () => {
                 alt="Footer Logo"
               />
             </Link>
-            <p className="leading-normal lg:max-w-[406px] mt-4 text-lightblack sm:text-base text-sm font-normal ff_poppins">
+            <p className="leading-normal opacity-70 lg:max-w-[406px] mt-4 text-lightblack sm:text-base text-sm font-normal ff_poppins">
               Galileo Sky, founded by industry experts, is redefining the gaming
               landscape. With a blend of groundbreaking technology and immersive
               entertainment, we create world-class gaming experiences and
@@ -78,7 +78,7 @@ const Footer = () => {
                   <li className="flex flex-col sm:gap-3 gap-[10px]">
                     {footerLink.map((obj, index) => (
                       <Link
-                        className="text-lightblack sm:text-base text-sm leading-normal ff_poppins hover:text-darkred transition-colors ease-linear duration-300 hover:font-medium"
+                        className="text-lightblack opacity-70 sm:text-base text-sm leading-normal ff_poppins hover:text-darkred transition-colors ease-linear duration-300 hover:font-medium"
                         key={index}
                         href={obj.path}
                       >
@@ -111,7 +111,7 @@ const Footer = () => {
                     </button>
                   </form>
                 </div>
-                <p className="sm:text-base text-sm font-normal text-lightblack leading-normal ff_poppins lg:max-w-[306px]">
+                <p className="sm:text-base text-sm !font-normal text-lightblack leading-normal ff_poppins lg:max-w-[306px] opacity-70">
                   Your email address is very safe with Galileo Sky. You will
                   only receive our gaming updates.
                 </p>
@@ -121,7 +121,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="w-full border-b border-solid border-lightblack opacity-15"></div>
-      <p className="text-center py-6 text-lightblack opacity-70 ff_poppins sm:text-base text-xs leading-normal">
+      <p className="text-center py-6 !font-normal text-lightblack opacity-70 ff_poppins sm:text-base text-sm leading-normal">
         {new Date().getFullYear()} Copyrights Galileo Sky, All Rights Reserved.
       </p>
     </div>

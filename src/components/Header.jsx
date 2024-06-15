@@ -107,14 +107,14 @@ const Header = () => {
       </div>
       <Navbar />
       <div className="container xl:max-w-[1164px] 2xl:flex-grow flex justify-center items-center flex-col mx-auto px-3 mt-[70px] sm:mt-[100px] md:mt-[164px] 2xl:mt-0 relative !z-[3]">
-        <div className="flex md:flex-col max-md:items-baseline items-center sm:gap-[13px] gap-2 justify-between h-20 absolute max-md:justify-center md:left-0 xl:left-[-10%] lg:left-[5%] max-md:bottom-[-30%] max-[340px]:bottom-[-20%] md:top-[38%] translate-y-[50%] space-y-2.5">
+        <div className="flex items-center justify-between h-20 absolute max-md:justify-center lg:left-0 xl:left-[-10%] md:-left-[8%] max-md:bottom-[-30%] max-[380px]:bottom-[-10%] max-[340px]:-bottom-[7%] md:top-[38%] translate-y-[50%] space-y-2.5 md:rotate-90">
           {videos.map((_, index) => (
-            <div key={index} className="flex items-center">
+            <div key={index} className="flex items-center !m-0">
               <div className="flex items-center justify-center w-[47px] h-[8px]">
                 <span
                   className={`h-[8px] rounded-[21px] transition-all duration-300 ease-in-out ${
                     index === presentVideo ? "bg-red w-[47px]" : "bg-white w-5"
-                  } cursor-pointer md:rotate-90`}
+                  } cursor-pointer`}
                   onClick={() => setCurrentVideo(index)}
                 ></span>
               </div>
@@ -126,7 +126,7 @@ const Header = () => {
             Future of Gaming
           </p>
         </div>
-        <h1 className="font-normal text-4xl sm:text-6xl md:text-7xl lg:text-8lg xl:text-9xl ff_opensans text-whitegrey text-center mt-4 lg:mt-[10px] leading-[110%] mb-4">
+        <h1 className="font-normal text-4xl sm:text-6xl md:text-7xl lg:text-8lg xl:text-[90px] ff_opensans text-whitegrey text-center mt-4 lg:mt-[10px] leading-[110%] mb-4">
           BEYOND <span className="text-red md:block">ENTERTAINMENT</span>
         </h1>
         <p className="ff_poppins font-normal text-sm sm:text-base text-whitegrey !opacity-90 max-w-[809px] text-center sm:px-5 md:px-10 lg:px-0 !leading-normal">
