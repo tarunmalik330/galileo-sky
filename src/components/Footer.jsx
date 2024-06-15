@@ -78,7 +78,7 @@ const Footer = () => {
                   <li className="flex flex-col sm:gap-3 gap-[10px]">
                     {footerLink.map((obj, index) => (
                       <Link
-                        className="text-lightblack text-base leading-normal ff_poppins hover:text-darkred transition-colors ease-linear duration-300 hover:font-medium"
+                        className="text-lightblack sm:text-base text-sm leading-normal ff_poppins hover:text-darkred transition-colors ease-linear duration-300 hover:font-medium"
                         key={index}
                         href={obj.path}
                       >
@@ -92,7 +92,7 @@ const Footer = () => {
                 <h6 className="capitalize text-base leading-normal text-lightblack font-normal ff_poppins mb-4">
                   Get Connected
                 </h6>
-                <div className="rounded-[10px] border border-solid border-grey bg-grey py-[7px] pr-[7px] md:pl-[21px] pl-[7px] max-w-[347px] w-full flex justify-end mb-4">
+                <div className="rounded-[10px] border border-solid border-grey bg-grey sm:py-[7px] py-1 pr-[7px] md:pl-[21px] pl-[7px] max-w-[347px] w-full flex justify-end mb-4">
                   <form className="flex" onSubmit={handleSubmit}>
                     <input
                       required

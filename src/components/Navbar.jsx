@@ -25,23 +25,24 @@ export default function Navbar() {
         <ul className="flex items-center justify-center gap-[24px] max-lg:hidden">
           <li className="relative navdrop">
             <Link
-              onClick={() => setNav(!nav)}
+              onClick={toggleDropdown}
               href="#games"
               className="text-whitegrey ff_poppins leading-normal text-base font-semibold flex items-center gap-1"
             >
               Games
               <span
-                className={`${isOpen ? "rotate-180" : ""}`}
-                onClick={toggleDropdown}
+                className={`${
+                  isOpen ? "rotate-180" : ""
+                } transition-all ease-linear duration-300`}
               >
                 <Arrow />
               </span>
             </Link>
             {isOpen && (
               <div className="flex flex-col whitespace-nowrap bg-white py-5 px-4 text-black gap-3 absolute z-[1] top-10 font-medium text-base rounded-lg">
-                <Link href="/">Game 1</Link>
-                <Link href="/">Game 2</Link>
-                <Link href="/">Game 3</Link>
+                <Link href="#home">Game 1</Link>
+                <Link href="#home">Game 2</Link>
+                <Link href="#home">Game 3</Link>
               </div>
             )}
           </li>
@@ -101,23 +102,30 @@ export default function Navbar() {
           >
             <li className="relative navdrop">
               <Link
-                onClick={() => setNav(!nav)}
+                onClick={toggleDropdown}
                 href="#games"
                 className="text-whitegrey ff_poppins leading-normal text-base font-semibold flex items-center gap-1 after:h-[2px] after:w-[0] hover:after:w-full after:bg-whitegrey after:absolute relative after:transition-all after:duration-300 after:ease-linear left-0 after:left-[50%] hover:after:left-[0] after:bottom-[-2px] after:rounded-[10px] transition-all duration-300 ease-linear"
               >
                 Games
                 <span
-                  className={`${isOpen ? "rotate-180" : ""}`}
-                  onClick={toggleDropdown}
+                  className={`${
+                    isOpen ? "rotate-180" : ""
+                  } transition-all ease-linear duration-300`}
                 >
                   <Arrow />
                 </span>
               </Link>
               {isOpen && (
                 <div className="flex flex-col whitespace-nowrap bg-white py-5 px-4 text-black gap-3 absolute z-[1] top-10 font-medium text-base rounded-lg">
-                  <Link href="/">Game 1</Link>
-                  <Link href="/">Game 2</Link>
-                  <Link href="/">Game 3</Link>
+                  <Link onClick={() => setNav(!nav)} href="#home">
+                    Game 1
+                  </Link>
+                  <Link onClick={() => setNav(!nav)} href="#home">
+                    Game 2
+                  </Link>
+                  <Link onClick={() => setNav(!nav)} href="#home">
+                    Game 3
+                  </Link>
                 </div>
               )}
             </li>
@@ -176,4 +184,3 @@ export default function Navbar() {
     </div>
   );
 }
-

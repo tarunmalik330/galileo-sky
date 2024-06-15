@@ -8,6 +8,7 @@ const Header = () => {
   const [presentVideo, setPresentVideo] = useState(0);
   const [toggleScroll, setToggleScroll] = useState(false);
 
+  // ========================== togglebtn ==========================
   useEffect(() => {
     if (toggleScroll === true) {
       const element = document.getElementById("footer");
@@ -25,7 +26,7 @@ const Header = () => {
       });
     }
   });
-
+  // ======================== header video ========================
   const videos = [
     "/assets/video/game-1.mp4",
     "/assets/video/game-2.mp4",
