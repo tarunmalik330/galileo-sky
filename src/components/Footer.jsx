@@ -104,13 +104,12 @@ const Footer = () => {
                       placeholder="Email Here"
                       className="capitalize w-full !text-lightblack text-base leading-normal ff_poppins bg-transparent placeholder:!text-lightblack outline-none"
                     />
-                    {error && <p style={{ color: "red" }}>{error}</p>}
-
                     <button className="text-white text-base leading-normal ff_poppins font-normal sm:py-[14px] py-3 sm:px-8 px-7 rounded-lg bg-darkred hover:bg-white hover:text-darkred transition-all ease-linear duration-300">
                       Submit
                     </button>
                   </form>
                 </div>
+                {error && <p style={{ color: "red" }}>{error}</p>}
                 <p className="sm:text-base text-sm !font-normal text-lightblack leading-normal ff_poppins lg:max-w-[306px] opacity-70">
                   Your email address is very safe with Galileo Sky. You will
                   only receive our gaming updates.
